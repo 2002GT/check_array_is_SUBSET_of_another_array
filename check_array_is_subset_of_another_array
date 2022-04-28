@@ -10,6 +10,7 @@ bool bSearch(int elem, int arr[], int n){
             return true;
         else if(arr[mid]<elem)
             start = mid+1;
+
         else end= mid-1;
     }
     
@@ -21,11 +22,13 @@ bool isSubset(int arr1[], int m, int arr2[], int n){
     sort(arr2,arr2+n); // library function to sort the array
     
     if(m>n) return false;
+
     for(int i=0; i<m; i++){
         
 	    bool present= bSearch(arr1[i],arr2,n);
 	    if(present==false) return false;
 	}
+
 	
 	return true;
 }
